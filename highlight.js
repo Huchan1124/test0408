@@ -1,35 +1,18 @@
 /* global AFRAME */
-
-
-// console.log(document.querySelectorAll('.menu-button'))
-
 AFRAME.registerComponent('highlight', {
-
     init: function() {
-        // var buttonEls = this.buttonEls = this.el.querySelectorAll('.menu-button');
-        console.log(document.querySelectorAll('.menu-button'))
-        console.log(document.querySelector('#background'))
-
-
-        document.querySelectorAll('.menu-button')[0].addEventListener('mouseenter', (evt) => {
-                    // alert('點到了');
-                    evt.target.setAttribute('material', 'color', '#e79b04');
-                }
-
-            )
-            // console.log(buttonEls)
-            // console.log(document.querySelectorAll('.menu-button'))
-            // var backgroundEl = document.querySelector('#background');
-            // this.onClick = this.onClick.bind(this);
-            // this.onMouseEnter = this.onMouseEnter.bind(this);
-            // this.onMouseLeave = this.onMouseLeave.bind(this);
-            // this.reset = this.reset.bind(this);
-            // backgroundEl.addEventListener('click', this.reset);
-            // for (var i = 0; i < buttonEls.length; ++i) {
-            //     buttonEls[i].addEventListener('mouseenter', this.onMouseEnter);
-            //     buttonEls[i].addEventListener('mouseleave', this.onMouseLeave);
-            //     buttonEls[i].addEventListener('click', this.onClick);
-            // }
+        var buttonEls = this.buttonEls = this.el.querySelectorAll('.menu-button');
+        var backgroundEl = document.querySelector('#background');
+        this.onClick = this.onClick.bind(this);
+        this.onMouseEnter = this.onMouseEnter.bind(this);
+        this.onMouseLeave = this.onMouseLeave.bind(this);
+        this.reset = this.reset.bind(this);
+        backgroundEl.addEventListener('click', this.reset);
+        for (var i = 0; i < buttonEls.length; ++i) {
+            buttonEls[i].addEventListener('mouseenter', this.onMouseEnter);
+            buttonEls[i].addEventListener('mouseleave', this.onMouseLeave);
+            buttonEls[i].addEventListener('click', this.onClick);
+        }
     },
 
     onClick: function(evt) {
