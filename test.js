@@ -11,32 +11,36 @@ AFRAME.registerComponent('highlight', {
         console.log(document.querySelector('#background'))
 
 
-        document.querySelectorAll('.menu-button')[0].addEventListener('mouseenter', (evt) => {
-                // alert('滑鼠移入');
-                evt.target.setAttribute('material', 'color', '#e79b04');
-            }
 
-        )
+        for (let i = 0; i < document.querySelectorAll('.menu-button').length; i++) {
+            document.querySelectorAll('.menu-button')[i].addEventListener('mouseenter', (evt) => {
+                    // alert('滑鼠移入');
+                    evt.target.setAttribute('material', 'color', '#e79b04');
+                }
 
-        document.querySelectorAll('.menu-button')[0].addEventListener('mouseleave', (evt) => {
+            )
+
+            document.querySelectorAll('.menu-button')[i].addEventListener('mouseleave', (evt) => {
                     // alert('滑鼠離開');
                     evt.target.setAttribute('material', 'color', '#ffffff');
                 }
 
             )
-            // console.log(buttonEls)
-            // console.log(document.querySelectorAll('.menu-button'))
-            // var backgroundEl = document.querySelector('#background');
-            // this.onClick = this.onClick.bind(this);
-            // this.onMouseEnter = this.onMouseEnter.bind(this);
-            // this.onMouseLeave = this.onMouseLeave.bind(this);
-            // this.reset = this.reset.bind(this);
-            // backgroundEl.addEventListener('click', this.reset);
-            // for (var i = 0; i < buttonEls.length; ++i) {
-            //     buttonEls[i].addEventListener('mouseenter', this.onMouseEnter);
-            //     buttonEls[i].addEventListener('mouseleave', this.onMouseLeave);
-            //     buttonEls[i].addEventListener('click', this.onClick);
-            // }
+        }
+
+        // console.log(buttonEls)
+        // console.log(document.querySelectorAll('.menu-button'))
+        // var backgroundEl = document.querySelector('#background');
+        // this.onClick = this.onClick.bind(this);
+        // this.onMouseEnter = this.onMouseEnter.bind(this);
+        // this.onMouseLeave = this.onMouseLeave.bind(this);
+        // this.reset = this.reset.bind(this);
+        // backgroundEl.addEventListener('click', this.reset);
+        // for (var i = 0; i < buttonEls.length; ++i) {
+        //     buttonEls[i].addEventListener('mouseenter', this.onMouseEnter);
+        //     buttonEls[i].addEventListener('mouseleave', this.onMouseLeave);
+        //     buttonEls[i].addEventListener('click', this.onClick);
+        // }
     },
 
     onClick: function(evt) {
